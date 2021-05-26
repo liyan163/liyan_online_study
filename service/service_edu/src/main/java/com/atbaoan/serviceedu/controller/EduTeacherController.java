@@ -4,9 +4,11 @@ package com.atbaoan.serviceedu.controller;
 
 import com.atbaoan.commonutils.R;
 import com.atbaoan.commonutils.ResultData;
+import com.atbaoan.serviceedu.entity.EduCourse;
 import com.atbaoan.serviceedu.entity.EduTeacher;
 import com.atbaoan.serviceedu.entity.vo.QueryTeacher;
 import com.atbaoan.serviceedu.service.EduTeacherService;
+import com.atbaoan.serviceedu.service.impl.EduCourseServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -35,6 +37,8 @@ public class EduTeacherController {
 
     @Autowired
     private EduTeacherService eduTeacherService;
+    @Autowired
+    private EduCourseServiceImpl eduCourseServiceImpl;
 
 
     @ApiOperation(value = "查询teacher对象list集合")
@@ -42,6 +46,7 @@ public class EduTeacherController {
     public ResultData getAll() {
         QueryWrapper wrapper = new QueryWrapper();
         List list = eduTeacherService.list(wrapper);
+        EduCourse one = eduCourseServiceImpl.getOne(null);
         return ResultData.ok().data("list", list);
     }
 
