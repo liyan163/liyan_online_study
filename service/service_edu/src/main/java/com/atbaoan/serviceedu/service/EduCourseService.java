@@ -1,6 +1,7 @@
 package com.atbaoan.serviceedu.service;
 
 import com.atbaoan.serviceedu.entity.EduCourse;
+import com.atbaoan.serviceedu.entity.vo.CourseInfoForm;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +14,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface EduCourseService extends IService<EduCourse> {
 
+    String addCourseInfo(CourseInfoForm courseInfoForm);
+
+    int updateCourseInfo(CourseInfoForm courseInfoForm);
+
+    CourseInfoForm getCourInfoDetail(String id);
 }

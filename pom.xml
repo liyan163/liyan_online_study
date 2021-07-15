@@ -40,6 +40,7 @@
         <commons-dbutils.version>1.7</commons-dbutils.version>
         <canal.client.version>1.1.0</canal.client.version>
         <docker.image.prefix>zx</docker.image.prefix>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -183,6 +184,11 @@
                 <groupId>com.alibaba.otter</groupId>
                 <artifactId>canal.client</artifactId>
                 <version>${canal.client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

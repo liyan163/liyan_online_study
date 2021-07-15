@@ -44,10 +44,8 @@ public class EduTeacherController {
     @ApiOperation(value = "查询teacher对象list集合")
     @GetMapping("/getAll")
     public ResultData getAll() {
-        QueryWrapper wrapper = new QueryWrapper();
-        List list = eduTeacherService.list(wrapper);
-        EduCourse one = eduCourseServiceImpl.getOne(null);
-        return ResultData.ok().data("list", list);
+        List list = eduTeacherService.list(null);
+        return ResultData.ok().data("items", list);
     }
 
     @ApiOperation(value = "通过id删除teacher对象")
